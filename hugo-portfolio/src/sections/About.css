@@ -1,0 +1,268 @@
+/* ── About Section ─────────────────────────────────────────── */
+.about-section {
+  background: var(--color-bg-surface);
+  border-radius: 32px;
+  margin-inline: clamp(0px, 2vw, 24px);
+  padding-block: var(--space-2xl);
+  padding-inline: var(--space-lg);
+}
+
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-xl), 6vw, 6rem);
+  align-items: center;
+  max-width: var(--max-width);
+  margin-inline: auto;
+}
+
+/* ── Left column ───────────────────────────────────────────── */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-lg);
+}
+
+.about-bio {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  max-width: 52ch;
+}
+
+/* ── Cert highlight cards ───────────────────────────────────── */
+.about-certs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.55rem 1rem;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  transition: border-color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.cert-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.cert-icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.cert-label {
+  white-space: nowrap;
+}
+
+/* ── LinkedIn button ────────────────────────────────────────── */
+.about-linkedin {
+  margin-top: var(--space-sm);
+}
+
+/* ── Right column — Orbital decoration ─────────────────────── */
+.about-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbit-scene {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  flex-shrink: 0;
+}
+
+/* Dashed outer ring — purely decorative */
+.orbit-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed var(--color-border);
+}
+
+/* Central avatar */
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow:
+    0 0 0 8px rgba(122, 158, 114, 0.08),
+    0 0 40px rgba(122, 158, 114, 0.12);
+}
+
+.orbit-initials {
+  font-family: var(--font-sans);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/*
+  Orbit pattern: one spinning "arm" per satellite.
+  The arm rotates around the center; the label counter-rotates
+  so it always reads left-to-right.
+  --start-angle positions the satellite's initial angle.
+*/
+.orbit-arm {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;   /* = ring radius */
+  height: 0;
+  transform-origin: 0 0;
+  transform: rotate(var(--start-angle));
+  animation: arm-spin 18s linear infinite;
+}
+
+.orbit-arm .orbit-label {
+  position: absolute;
+  left: 150px;
+  top: 0;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.6rem;
+  border-radius: 999px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  font-size: 0.71rem;
+  font-weight: 600;
+  color: var(--color-accent-light);
+  white-space: nowrap;
+  animation: label-counter 18s linear infinite;
+}
+
+@keyframes arm-spin {
+  from { transform: rotate(var(--start-angle)); }
+  to   { transform: rotate(calc(var(--start-angle) + 360deg)); }
+}
+
+@keyframes label-counter {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+/* Pause orbit on hover */
+.orbit-scene:hover .orbit-arm,
+.orbit-scene:hover .orbit-label {
+  animation-play-state: paused;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    order: -1;
+  }
+
+  .orbit-scene {
+    width: 240px;
+    height: 240px;
+  }
+
+  .orbit-arm {
+    width: 120px;
+  }
+
+  .orbit-arm .orbit-label {
+    left: 120px;
+  }
+
+  .orbit-center {
+    width: 96px;
+    height: 96px;
+  }
+
+  .orbit-initials {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    border-radius: 20px;
+    margin-inline: 0;
+    padding-inline: var(--space-md);
+  }
+
+  .about-certs {
+    flex-direction: column;
+  }
+
+  .cert-card {
+    width: 100%;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-right {
+    order: -1;
+  }
+
+  .orbit-scene {
+    width: 260px;
+    height: 260px;
+  }
+
+  .orbit-center {
+    width: 100px;
+    height: 100px;
+  }
+
+  .orbit-initials {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-section {
+    border-radius: 20px;
+    margin-inline: 0;
+    padding-inline: var(--space-md);
+  }
+
+  .about-certs {
+    flex-direction: column;
+  }
+
+  .cert-card {
+    width: 100%;
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "available": "Disponible para nuevos proyectos",
+    "name": "Hugo Parra",
+    "role": "QA Engineer · Automatización · Frontend",
+    "summary": "QA Engineer certificado (ISTQB, Tricentis Tosca) con base técnica en desarrollo. Especialista en Cypress con reducción del 66% en tiempos de regresión. Experiencia en entornos Web, Android e iOS.",
+    "ctaExperience": "Ver experiencia",
+    "ctaCV": "Descargar CV",
+    "stats": {
+      "regression": "66% menos regresión",
+      "tests": "300+ test cases",
+      "award": "3º CyL Skills 2023"
+    }
+  },
+  "about": {
+    "title": "Sobre mí",
+    "bio": "QA Engineer de Valladolid, con raíces en desarrollo frontend (AngularJS en Getronics), evolucionado hacia QA con certificaciones ISTQB y Tricentis Tosca. Actualmente trabajando en el proyecto olímpico global de Hiberus validando analítica y tracking en Web, Android e iOS.",
+    "linkedin": "Conectar en LinkedIn",
+    "certs": {
+      "istqb":  "ISTQB Foundation",
+      "tosca":  "Tricentis Tosca Certified",
+      "skills": "3º CyL Skills 2023"
+    },
+    "orbit": {
+      "cypress":  "Cypress",
+      "istqb":    "ISTQB",
+      "tosca":    "Tosca",
+      "angular":  "Angular",
+      "mobile":   "Mobile"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Actualidad",
+    "jobs": [
+      {
+        "id": "hiberus-olympics",
+        "company": "Hiberus",
+        "role": "QA Engineer",
+        "period": "Abr 2026 – Actualidad",
+        "current": true,
+        "project": "Olympics Project — Digital Analytics QA Specialist",
+        "highlights": [
+          "Lidero la validación de analítica y tracking para los Juegos Olímpicos en Web, Android e iOS",
+          "Auditoría de Tracking Plans complejos para captura precisa de métricas de comportamiento",
+          "Inspección técnica de llamadas de red y APIs para verificar payloads",
+          "QA Multiplataforma garantizando paridad de datos entre sistemas operativos"
+        ],
+        "tags": ["Web", "Android", "iOS", "Analytics", "API"]
+      },
+      {
+        "id": "hiberus-havas",
+        "company": "Hiberus",
+        "role": "QA Engineer",
+        "period": "2024 – Abr 2026",
+        "current": false,
+        "project": "Profiles Studio — Havas Media",
+        "highlights": [
+          "Automatización de 70 test cases críticos con Cypress, cobertura del 60%",
+          "Reducción del tiempo de regresión de 3 días a 1 (66% de mejora)",
+          "Validación de datos masivos en interfaces de alta densidad gráfica"
+        ],
+        "tags": ["Cypress", "Automatización", "Data Validation"]
+      },
+      {
+        "id": "hiberus-eci",
+        "company": "Hiberus",
+        "role": "QA Engineer",
+        "period": "2023 – 2024",
+        "current": false,
+        "project": "El Corte Inglés (ECI)",
+        "highlights": [
+          "QA Funcional y Accesibilidad en +20 releases bajo Agile",
+          "Reporte de fallos críticos de accesibilidad y rendimiento"
+        ],
+        "tags": ["Agile", "Accesibilidad", "Funcional"]
+      },
+      {
+        "id": "getronics",
+        "company": "Getronics",
+        "role": "Desarrollador Front-End",
+        "period": "2022 – 2023",
+        "current": false,
+        "project": null,
+        "highlights": [
+          "Desarrollo de interfaces web corporativas con AngularJS para el sector público"
+        ],
+        "tags": ["AngularJS", "Frontend", "Sector Público"]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills Técnicas",
+    "categories": [
+      {
+        "id": "automation",
+        "label": "Automatización",
+        "icon": "ti-bug",
+        "tags": ["Cypress", "Tricentis Tosca", "BDD/Gherkin", "E2E Testing", "Regresión"]
+      },
+      {
+        "id": "dev",
+        "label": "Desarrollo",
+        "icon": "ti-code",
+        "tags": ["JavaScript", "NodeJS", "AngularJS", "Python", "Java"]
+      },
+      {
+        "id": "qa",
+        "label": "QA & Testing",
+        "icon": "ti-checklist",
+        "tags": ["API Testing REST", "Mobile QA (Android/iOS)", "Accesibilidad", "Test Management", "300+ Test Cases"]
+      },
+      {
+        "id": "devops",
+        "label": "DevOps & Herramientas",
+        "icon": "ti-settings",
+        "tags": ["Jira", "Xray", "GitHub Actions", "Docker", "Jenkins", "TestLink"]
+      }
+    ]
+  },
+  "contact": {
+    "title": "¿Hablamos?",
+    "subtitle": "Abierto a nuevas oportunidades y proyectos",
+    "cards": {
+      "email":    { "label": "Email",     "value": "hugo.pargon@gmail.com" },
+      "linkedin": { "label": "LinkedIn",  "value": "linkedin.com/in/hugo-parra-gonzález" },
+      "location": { "label": "Ubicación", "value": "Vigo, España" }
+    },
+    "downloadCV": "Descargar CV",
+    "copy": "Copiar email",
+    "copied": "¡Copiado!",
+    "footer": "© 2026 Hugo Parra — Hecho con React & Vite"
+  }
+}
+

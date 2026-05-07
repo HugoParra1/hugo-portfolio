@@ -1,0 +1,248 @@
+/* ── Contact Section ───────────────────────────────────────── */
+.contact-section {
+  position: relative;
+  background: var(--color-bg-card);
+  padding-block: var(--space-2xl);
+  padding-inline: var(--space-lg);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Decorative blob — bottom-right */
+.contact-blob {
+  position: absolute;
+  width: clamp(260px, 38vw, 480px);
+  aspect-ratio: 1;
+  background: var(--color-bg-surface);
+  opacity: 0.5;
+  bottom: -18%;
+  right: -10%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+/* ── Title ─────────────────────────────────────────────────── */
+.contact-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.15;
+}
+
+/* ── Subtitle ──────────────────────────────────────────────── */
+.contact-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  max-width: 44ch;
+}
+
+/* ── Cards row ─────────────────────────────────────────────── */
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+/* ── Individual contact card ───────────────────────────────── */
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.contact-card--link {
+  cursor: pointer;
+}
+
+.contact-card--link:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Icon wrapper */
+.contact-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(122, 158, 114, 0.1);
+  color: var(--color-accent);
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.contact-card--link:hover .contact-card-icon {
+  background: rgba(122, 158, 114, 0.2);
+}
+
+/* Label */
+.contact-card-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+/* Value */
+.contact-card-value {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  word-break: break-all;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.contact-card--link:hover .contact-card-value {
+  color: var(--color-accent);
+}
+
+/* ── Email card ─────────────────────────────────────────────── */
+/* Always column layout — overrides the mobile row rule */
+.contact-card--email {
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.6rem;
+}
+
+.contact-card-main-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+/* ── Copy button ────────────────────────────────────────────── */
+/* In normal flow — no absolute positioning */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+  white-space: nowrap;
+  margin-top: 0.15rem;
+}
+
+.copy-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(141, 181, 132, 0.08);
+}
+
+.copy-btn--done {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(141, 181, 132, 0.1);
+}
+
+.copy-btn-label {
+  line-height: 1;
+}
+
+/* ── Download CV button ────────────────────────────────────── */
+.contact-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  background: var(--color-accent);
+  color: #1A2219;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  margin-top: var(--space-sm);
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(122, 158, 114, 0.3);
+}
+
+.contact-cv-btn:hover {
+  background: var(--color-accent-light);
+  box-shadow: 0 6px 28px rgba(122, 158, 114, 0.45);
+  color: #1A2219;
+}
+
+/* ── Footer text ───────────────────────────────────────────── */
+.contact-footer {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  margin: 0;
+  margin-top: var(--space-md);
+  letter-spacing: 0.02em;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .contact-section {
+    padding-inline: var(--space-md);
+  }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .contact-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 1rem 1.2rem;
+    gap: 0.9rem;
+  }
+
+  .contact-card-label,
+  .contact-card-value {
+    text-align: left;
+  }
+
+  .contact-cv-btn {
+    padding: 0.85rem 2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 1.8rem;
+  }
+}
